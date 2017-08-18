@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicio2Calculadora
+namespace Ejercicio3Persona
 {
     class Persona
     {
-        private string nombre { get; set; }
-        private int edad { get; set; }
-        private int CI;
-        private string sexo { get; set; }
-        private int peso { get; set; }
-        private int altura { get; set; }
+        public string nombre { get; set; }
+        public int edad { get; set; }
+        public int CI;
+        public string sexo { get; set; }
+        public int peso { get; set; }
+        public float altura { get; set; }
 
         public Persona(int Cédula)
         {
@@ -36,7 +36,8 @@ namespace Ejercicio2Calculadora
         }
         public int CalcularIMC()
         {
-            int IMC = this.peso / this.altura ^ 2;
+            int altura2 = Convert.ToInt32(altura);
+            int IMC = this.peso / altura2*altura2;
             int final_value = 0;
 
             if (IMC < 18)
@@ -75,6 +76,15 @@ namespace Ejercicio2Calculadora
                 Console.WriteLine("No se pudo realizar el cálculo del IMC");
                 return 23742;
             }             
+        }
+        public void Info()
+        {
+            Console.WriteLine("Nombre: " + nombre);
+            Console.WriteLine("CI: " + CI);
+            Console.WriteLine("Edad: " + edad);
+            Console.WriteLine("Sexo: " + sexo);
+            Console.WriteLine("Peso y altura: " + peso + "kg, " + altura + " m");
+
         }                
     }
 }
