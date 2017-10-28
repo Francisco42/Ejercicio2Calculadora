@@ -8,36 +8,34 @@ namespace Ejercicio3Persona
 {
     class Persona
     {
-        public string nombre { get; set; }
-        public int edad { get; set; }
-        public int CI;
-        public string sexo { get; set; }
-        public int peso { get; set; }
-        public float altura { get; set; }
+        public String Nombre { get; set; }
+        public Int32 Edad { get; set; }
+        public Int32 CI { get; set; }
+        public Boolean Sexo { get; set; } //true hombre, false mujer
+        public Int32 Peso { get; set; }
+        public Double Altura { get; set; }
 
-        public Persona(int Cédula)
+        public Persona(Int32 cédula, String nombre, Int32 edad, Boolean sexo)
         {
-            CI = Cédula;
-            this.nombre = "";
-            this.edad = 0;
-            this.sexo = "H";
+            this.CI = cédula;
+            this.Nombre = nombre;
+            this.Edad = edad;
+            this.Sexo = sexo;
         }
 
-        public bool EsMayorDeEdad()
+        public Boolean EsMayorDeEdad()
         {
-            if(this.edad >= 18)
+            if(this.Edad >= 18)
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
+
         public int CalcularIMC()
         {
-            int altura2 = Convert.ToInt32(altura);
-            int IMC = this.peso / altura2*altura2;
+            int altura2 = Convert.ToInt32(Altura);
+            int IMC = this.Peso / altura2*altura2;
             int final_value = 0;
 
             if (IMC < 18)
@@ -79,11 +77,11 @@ namespace Ejercicio3Persona
         }
         public void Info()
         {
-            Console.WriteLine("Nombre: " + nombre);
+            Console.WriteLine("Nombre: " + Nombre);
             Console.WriteLine("CI: " + CI);
-            Console.WriteLine("Edad: " + edad);
-            Console.WriteLine("Sexo: " + sexo);
-            Console.WriteLine("Peso y altura: " + peso + "kg, " + altura + " m");
+            Console.WriteLine("Edad: " + Edad);
+            Console.WriteLine("Sexo: " + Sexo);
+            Console.WriteLine("Peso y altura: " + Convert.ToString(Peso) + "kg, " + Convert.ToString(Altura) + " m");
 
         }                
     }

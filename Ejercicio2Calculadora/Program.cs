@@ -10,9 +10,12 @@ namespace Ejercicio3Persona
     {
         static void Main(string[] args)
         {
-            Persona a = new Persona(49042045);
-            a.nombre = "Bruno Garcilazo";
-            a.altura = 1.7;
+            Persona a = new Persona(49042045, "Bruno", 18, true);
+            a.Peso = 60;
+            a.Altura = 170;
+            Console.WriteLine(a.CalcularIMC());
+            a.Info();
+            Console.ReadKey();
         }
     }
 }
